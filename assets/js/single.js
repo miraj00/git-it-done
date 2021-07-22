@@ -2,6 +2,7 @@ var repoNameEl = document.querySelector("#repo-name");
 var issueContainerEl = document.querySelector("#issues-container");
 var limitWarningEl = document.querySelector("#limit-warning");
 
+//------------------------------------------------------------------------
 var getRepoName = function() {
   // grab repo name from url query string
   var queryString = document.location.search;
@@ -18,6 +19,7 @@ var getRepoName = function() {
   }
 };
 
+//------------------------------------------------------------------------
 var getRepoIssues = function(repo) {
   // format the github api url
   var apiUrl = "https://api.github.com/repos/" + repo + "/issues?direction=asc";
@@ -41,6 +43,7 @@ var getRepoIssues = function(repo) {
   });
 };
 
+//------------------------------------------------------------------------
 var displayIssues = function(issues) {
   if (issues.length === 0) {
     issueContainerEl.textContent = "This repo has no open issues!";
@@ -80,6 +83,7 @@ var displayIssues = function(issues) {
   }
 };
 
+//-----------------------------------------------------------------------
 var displayWarning = function(repo) {
   // add text to warning container
   limitWarningEl.textContent = "To see more than 30 issues, visit ";
